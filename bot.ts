@@ -4,7 +4,7 @@ const token = '7786031534:AAH9ydiidltw9JNwkHepNGbEhmgZDmlLuEA';
 const bot = new TelegramBot(token, { polling: true });
 
 const banKeywords = ['заработок', 'работа', 'криптовалюта', 'Вакансия', 'Вакансию', 'Внимание', 'Вниманию', 'Казино', 'Слоты', 'Людей', 'Предлагаю', 'Надоело', 'Надоел', 'Человек', 'Крипта', 'Криптовалюта', 'Криптавалюта', 'Обучение'];
-const messageBeforeBan = "В РОТ ТЕБЯ ЕБАЛ СПАМ ОБОССАНЫЙ! Послан в БАН нахуй! СЛУЖУ ВЛАДИСЛАВУ! Служу народу барахолки \n Слава Украине !";
+const messageBeforeBan = "В РОТ ТЕБЯ ЕБАЛ СПАМ ОБОССАНЫЙ! \nПослан в БАН нахуй! СЛУЖУ ВЛАДИСЛАВУ! Служу народу барахолки \nСлава Украине !";
 
 function containsBanKeyword(text: string) {
   return banKeywords.some(keyword => {
