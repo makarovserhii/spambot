@@ -15,7 +15,6 @@ function containsBanKeyword(text: string) {
 }
 
 bot.on('message', (msg: any) => {
-  console.log('msgData', msg);
   const chatId = msg.chat.id;
   const messageText = msg.text || '';
   const userId = msg.from?.id;
@@ -25,6 +24,8 @@ bot.on('message', (msg: any) => {
 
   bot.sendMessage(chatId, `@${userName} ${messageBeforeBan}`)
     .then((sentMessage: any) => {
+      console.log('Message:', messageText);
+      console.log('PIDOR: ', userName);
       // Удаление сообщения через 1 минуту 
       setTimeout(() => {
         bot.deleteMessage(chatId, sentMessage.message_id)
