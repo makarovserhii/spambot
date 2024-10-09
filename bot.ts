@@ -15,6 +15,7 @@ function containsBanKeyword(text: string) {
 bot.on('message', (msg: any) => {
   const chatId = msg.chat.id;
   const messageText = msg.text || '';
+  const messageId = msg.message_id;
   const userId = msg.from?.id;
   const userName = msg.from?.username;
 
@@ -29,6 +30,9 @@ bot.on('message', (msg: any) => {
       setTimeout(() => {
         bot.deleteMessage(chatId, sentMessage.message_id)
           .catch((error: any) => console.error('Ошибка при удалении сообщения:', error.description));
+
+        bot.deleteMessage(chatId, messageId)
+        .catch((error: any) => console.error('Ошибка при удалении сообщения:', error.description));
       }, 60000);
 
       // Бан пользователя
